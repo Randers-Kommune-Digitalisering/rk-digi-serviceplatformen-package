@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <SatelliteResourceLanguages>en;da</SatelliteResourceLanguages>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="KMD.Digst.OioIdws.WscCore" Version="4.0.72" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.10.3" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.10.3" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.10.3" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.3" />
+  </ItemGroup>
+</Project>

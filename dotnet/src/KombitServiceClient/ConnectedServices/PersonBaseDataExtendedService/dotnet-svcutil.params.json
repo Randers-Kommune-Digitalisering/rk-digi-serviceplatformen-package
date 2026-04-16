@@ -1,0 +1,18 @@
+{
+  "providerId": "Microsoft.Tools.ServiceModel.Svcutil",
+  "version": "8.0.0",
+  "options": {
+    "inputs": [
+      "../../../../../WsdlForINtegrations/PersonBaseDataExtendedService/wsdl/token/PersonBaseDataExtendedService.wsdl"
+    ],
+    "namespaceMappings": [
+      "*, ConnectedServices.PersonBaseDataExtendedService"
+    ],
+    "outputFile": "PersonBaseDataExtendedService.cs",
+    "references": [
+      "C:\\Users\\dqb1334\\Desktop\\rk-digi-serviceplatformen-package\\dotnet\\src\\KombitServiceClient\\KombitServiceClient\\KombitServiceClient.csproj"
+    ],
+    "targetFramework": "net9.0",
+    "typeReuseMode": "Specified"
+  }
+}

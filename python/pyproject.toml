@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools]
+include-package-data = true
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["kombit-client"]
+
+
+[tool.setuptools.package-data]
+kombit-client = [
+  "src/kombit-client/dotnet/*.dll",
+  "src/kombit-client/dotnet/*.json",
+  "src/kombit-client/dotnet/*.pdb",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/Randers-Kommune-Digitalisering/rk-digi-serviceplatformen-package"
+Repository = "https://github.com/Randers-Kommune-Digitalisering/rk-digi-serviceplatformen-package"
+Bug-Tracker = "https://github.com/Randers-Kommune-Digitalisering/rk-digi-serviceplatformen-package/issues"
+
+[project]
+name = "kombit-client"
+version = "0.0.2-dev"
+description = "KOMBIT client provides easy connection to webservices from KOMBIT / Serviceplatformen / digitaliseringskataloget."
+authors = [
+  { name = "Rune Keena", email="runekeena@gmail.com"},
+  { name = "Randers Kommune Digitalisering", email = "digitalisering@randers.dk" }
+]
+readme = "README.md"
+requires-python = ">=3.10, <3.15"
+license = "MIT"
+dependencies = [
+  "pythonnet>=3.0.5"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+  "pytest-cov>=4.0",
+  "build>=1.0.0",
+]
