@@ -1,9 +1,11 @@
 import json
 
-from kombit_client.dotnet._bridge import CPRPersonLookup
+from kombit_client.dotnet._bridge import _PersonBaseDataExtendedClient
+
+__all__ = ["PersonBaseDataExtendedClient"]
 
 
-class CPRLookup(CPRPersonLookup):
+class PersonBaseDataExtendedClient(_PersonBaseDataExtendedClient):
     """A Python wrapper around the CPRPersonLookup service from the KombitServiceClient .NET library."""
     def __init__(
         self,
@@ -29,7 +31,7 @@ class CPRLookup(CPRPersonLookup):
             debugMode=debugMode,
         )
 
-    def lookup(self, cpr_number: str) -> dict:
+    def person_lookup(self, pnr: str) -> dict:
         """Lookup a CPR number and return the result as a dictionary."""
-        res = self.Lookup(cpr_number).Result
+        res = self.PersonLookup(PNR=pnr).Result
         return json.loads(res)

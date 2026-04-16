@@ -13,6 +13,6 @@ def _load_dotnet() -> None:
 
 
 _load_dotnet()
-from KombitServiceClient.Services import CPRPersonLookup  # noqa: E402
+from KombitServiceClient.Integrations.SF1520 import PersonBaseDataExtendedClient as _PersonBaseDataExtendedClient  # noqa: E402
 
-__all__ = ["CPRPersonLookup"]
+__all__ = ["_PersonBaseDataExtendedClient"]
