@@ -1,5 +1,6 @@
 import json
-from dotnet._bridge import CPRPersonLookup
+
+from kombit_client.dotnet._bridge import CPRPersonLookup
 
 
 class CPRLookup(CPRPersonLookup):
