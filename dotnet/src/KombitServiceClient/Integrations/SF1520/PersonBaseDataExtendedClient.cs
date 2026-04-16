@@ -7,12 +7,12 @@ using static Digst.OioIdws.SoapCore.FederatedChannelFactoryExtensions;
 
 
 using KombitServiceClient.Configuration;
-namespace KombitServiceClient.Services;
+namespace KombitServiceClient.Integrations.SF1520;
 
 
-public class CPRPersonLookup : ServiceConfiguration
+public class PersonBaseDataExtendedClient : ServiceConfiguration
 {
-    public CPRPersonLookup(
+    public PersonBaseDataExtendedClient(
         string stsCertificateFilePath,
         string stsEndpointAddress,
         string stsEntityIdentifier,
@@ -37,11 +37,11 @@ public class CPRPersonLookup : ServiceConfiguration
     {
     }
 
-    public async Task<string> Lookup(string cprNumber)
+    public async Task<string> PersonLookup(string PNR)
     {
         var token = (GenericXmlSecurityToken)new StsTokenService(StsConfig).GetToken();
         var response = await CreateChannelWithIssuedToken<PersonBaseDataExtendedPortType>(token, StsConfig)
-            .PersonLookupAsync(new PersonLookupRequest(new PersonLookupRequestType { PNR = cprNumber }));
+            .PersonLookupAsync(new PersonLookupRequest(new PersonLookupRequestType { PNR = PNR }));
         var personData = response.PersonLookupResponse1;
         JsonSerializerOptions options = new() { WriteIndented = true, IncludeFields = true };
         return JsonSerializer.Serialize(personData, options);
