@@ -1,15 +1,17 @@
+import os
 from clr_loader import get_coreclr
 from pythonnet import set_runtime
 
+_DOTNET_DIR = os.path.abspath(os.path.dirname(__file__))
+
 
 def _load_dotnet() -> None:
-    set_runtime(get_coreclr(runtime_config="KombitServiceClient.runtimeconfig.json"))
-    import clr  # noqa: WPS43
-    clr.AddReference("KombitServiceClient")
+    runtime_config = os.path.join(_DOTNET_DIR, "KombitServiceClient.runtimeconfig.json")
+    set_runtime(get_coreclr(runtime_config=runtime_config))
+    import clr
+    clr.AddReference(os.path.join(_DOTNET_DIR, "KombitServiceClient"))
 
 
-# dll_dir = os.path.abspath(os.path.dirname(__file__))
-# sys.path.append(dll_dir)
 _load_dotnet()
 from KombitServiceClient.Services import CPRPersonLookup  # noqa: E402
 

@@ -13,10 +13,10 @@ include = ["kombit_client*"]
 
 
 [tool.setuptools.package-data]
-kombit_client = [
-  "src/kombit_client/dotnet/*.dll",
-  "src/kombit_client/dotnet/*.json",
-  "src/kombit_client/dotnet/*.pdb",
+"kombit_client" = [
+  "dotnet/*.dll",
+  "dotnet/*.json",
+  "dotnet/*.pdb",
 ]
 
 
@@ -27,7 +27,7 @@ Bug-Tracker = "https://github.com/Randers-Kommune-Digitalisering/rk-digi-service
 
 [project]
 name = "kombit-client"
-version = "0.0.6-dev"
+version = "0.0.7-dev"
 description = "KOMBIT client provides easy connection to webservices from KOMBIT / Serviceplatformen / digitaliseringskataloget."
 authors = [
   { name = "Rune Keena", email="runekeena@gmail.com"},
