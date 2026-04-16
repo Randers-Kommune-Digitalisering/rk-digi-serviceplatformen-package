@@ -58,7 +58,7 @@ jobs:
         shell: bash        
         run: |
           src="dotnet/src/KombitServiceClient/bin/Release/net9.0"
-          dst="python/src/kombit-client/dotnet"
+          dst="python/src/kombit_client/dotnet"
           mkdir -p "$dst"
           cp -r "$src"/* "$dst"
 
