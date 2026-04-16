@@ -14,9 +14,9 @@ include = ["kombit_client*"]
 
 [tool.setuptools.package-data]
 kombit_client = [
-  "src/kombit-client/dotnet/*.dll",
-  "src/kombit-client/dotnet/*.json",
-  "src/kombit-client/dotnet/*.pdb",
+  "src/kombit_client/dotnet/*.dll",
+  "src/kombit_client/dotnet/*.json",
+  "src/kombit_client/dotnet/*.pdb",
 ]
 
 
