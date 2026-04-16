@@ -28,7 +28,7 @@ jobs:
           fi
       - name: Check version matches tag
         run: |
-          PKG_VERSION=$(grep '^version' python/pyproject.toml | head -1 | sed 's/.*=\s*"\([0-9.]*\)"/\1/')
+          PKG_VERSION=$(grep '^version' python/pyproject.toml | head -1 | sed -E 's/^version *= *"(.*)"/\1/')
           TAG_VERSION=${GITHUB_REF##*/}
           TAG_VERSION=${TAG_VERSION#v}
           echo "Version in pyproject.toml: $PKG_VERSION"
