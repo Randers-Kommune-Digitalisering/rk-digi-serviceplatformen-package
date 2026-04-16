@@ -46,7 +46,7 @@ jobs:
       - name: Build .NET library (Release)
         run: >
           dotnet build
-          dotnet\src\KombitServiceClient\KombitServiceClient.csproj
+          dotnet/src/KombitServiceClient/KombitServiceClient.csproj
           -c Release
           --nologo
 
