@@ -32,7 +32,7 @@ jobs:
         # as wheel artifacts and end up in the installed package.
         shell: pwsh
         run: |
-          $src = "dotnet\src\KombitServiceClient\bin\Release\net8.0"
+          $src = "dotnet\src\KombitServiceClient\bin\Release\net9.0"
           $dst = "python\src\kombit-client\dotnet"
           New-Item -ItemType Directory -Force -Path $dst | Out-Null
           Copy-Item "$src\*" -Destination $dst -Recurse -Force
