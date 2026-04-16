@@ -2,6 +2,8 @@
 
 certs/
 WsdlForINtegrations/
+python/src/kombit-client/dotnet/*
+!python/src/kombit-client/dotnet/*.py
 
 # Build results
 [Dd]ebug/
