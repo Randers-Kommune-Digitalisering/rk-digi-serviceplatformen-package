@@ -3,22 +3,44 @@ using Digst.OioIdws.OioWsTrustCore;
 using Digst.OioIdws.WscCore.OioWsTrust;
 using static Digst.OioIdws.WscCore.OioWsTrust.TokenServiceConfigurationFactory;
 
+
+/// <summary>
+/// Provides configuration and initialization for STS token service communication.
+/// </summary>
 namespace KombitServiceClient.Configuration;
 
+
+/// <summary>
+/// Base class for service configuration, responsible for creating and storing the STS token service configuration.
+/// </summary>
 public class ServiceConfiguration
 {
-    public string StsCertificateFilePath { get; }  // .cer
-    public string StsEndpointAddress { get; }
-    public string StsEntityIdentifier { get; }
-    public string ServiceCertificatePath { get; }  // .cer
-    public string ServiceEndpoint { get; }
-    public string ServiceEndpointId { get; }
-    public string ClientCertificateFilePath { get; }  // .p12
-    public string Cvr { get; }
-    public bool IncludeLibertyHeader { get; }  // default: true
-    public string WspSoapVersion { get; }  // default: "1.1"
-    public bool DebugMode { get; }  // default: false
+    /// <summary>
+    /// The STS token service configuration instance created from the provided parameters.
+    /// </summary>
+    private readonly StsTokenServiceConfiguration _stsConfig;
 
+    /// <summary>
+    /// Gets the STS token service configuration for use by subclasses.
+    /// </summary>
+    protected StsTokenServiceConfiguration StsConfig => _stsConfig;
+
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ServiceConfiguration"/> class and creates the STS token service configuration.
+    /// </summary>
+    /// <param name="stsCertificateFilePath">Path to the STS certificate (.cer).</param>
+    /// <param name="stsEndpointAddress">STS endpoint address.</param>
+    /// <param name="stsEntityIdentifier">STS entity identifier.</param>
+    /// <param name="serviceCertificatePath">Path to the service certificate (.cer).</param>
+    /// <param name="serviceEndpoint">Service endpoint address.</param>
+    /// <param name="serviceEndpointId">Service endpoint ID.</param>
+    /// <param name="cvr">CVR number.</param>
+    /// <param name="clientCertificateFilePath">Path to the client certificate (.p12).</param>
+    /// <param name="clientCertificatePassword">Optional password for the client certificate (.p12).</param>
+    /// <param name="includeLibertyHeader">Whether to include the Liberty header (default: true).</param>
+    /// <param name="wspSoapVersion">SOAP version for WSP (default: "1.1").</param>
+    /// <param name="debugMode">Enable debug mode (default: false).</param>
     public ServiceConfiguration(
         string stsCertificateFilePath,
         string stsEndpointAddress,
@@ -26,40 +48,86 @@ public class ServiceConfiguration
         string serviceCertificatePath,
         string serviceEndpoint,
         string serviceEndpointId,
-        string clientCertificateFilePath,
         string cvr,
+        string clientCertificateFilePath,
+        string? clientCertificatePassword = null,
         bool includeLibertyHeader = true,
         string wspSoapVersion = "1.1",
         bool debugMode = false)
     {
-        StsCertificateFilePath = stsCertificateFilePath;
-        StsEndpointAddress = stsEndpointAddress;
-        StsEntityIdentifier = stsEntityIdentifier;
-        ServiceCertificatePath = serviceCertificatePath;
-        ServiceEndpoint = serviceEndpoint;
-        ServiceEndpointId = serviceEndpointId;
-        ClientCertificateFilePath = clientCertificateFilePath;
-        Cvr = cvr;
-        IncludeLibertyHeader = includeLibertyHeader;
-        WspSoapVersion = wspSoapVersion;
-        DebugMode = debugMode;
+        _stsConfig = CreateStsConfigInternal(
+            stsCertificateFilePath,
+            stsEndpointAddress,
+            stsEntityIdentifier,
+            serviceCertificatePath,
+            serviceEndpoint,
+            serviceEndpointId,
+            cvr,
+            clientCertificateFilePath,
+            clientCertificatePassword,
+            includeLibertyHeader,
+            wspSoapVersion,
+            debugMode
+        );
     }
 
-    public StsTokenServiceConfiguration CreateStsConfig() =>
-        CreateConfiguration(new OioIdwsWcfConfigurationSection()
+
+    /// <summary>
+    /// Creates the STS token service configuration from the provided parameters.
+    /// </summary>
+    /// <param name="stsCertificateFilePath">Path to the STS certificate (.cer).</param>
+    /// <param name="stsEndpointAddress">STS endpoint address.</param>
+    /// <param name="stsEntityIdentifier">STS entity identifier.</param>
+    /// <param name="serviceCertificatePath">Path to the service certificate (.cer).</param>
+    /// <param name="serviceEndpoint">Service endpoint address.</param>
+    /// <param name="serviceEndpointId">Service endpoint ID.</param>
+    /// <param name="cvr">CVR number.</param>
+    /// <param name="clientCertificateFilePath">Path to the client certificate (.p12).</param>
+    /// <param name="clientCertificatePassword">Optional password for the client certificate (.p12).</param>
+    /// <param name="includeLibertyHeader">Whether to include the Liberty header.</param>
+    /// <param name="wspSoapVersion">SOAP version for WSP.</param>
+    /// <param name="debugMode">Enable debug mode.</param>
+    /// <returns>The created <see cref="StsTokenServiceConfiguration"/> instance.</returns>
+    private StsTokenServiceConfiguration CreateStsConfigInternal(
+        string stsCertificateFilePath,
+        string stsEndpointAddress,
+        string stsEntityIdentifier,
+        string serviceCertificatePath,
+        string serviceEndpoint,
+        string serviceEndpointId,
+        string cvr,
+        string clientCertificateFilePath,
+        string? clientCertificatePassword = null,
+        bool includeLibertyHeader = true,
+        string wspSoapVersion = "1.1",
+        bool debugMode = false)
+    {
+        Certificate clientCert;
+
+        if (clientCertificatePassword is null)
         {
-            StsCertificate = new Certificate { FilePath = StsCertificateFilePath, FromFileSystem = true },
-            StsEndpointAddress = StsEndpointAddress,
-            StsEntityIdentifier = StsEntityIdentifier,
-            ServiceCertificate = new Certificate { FilePath = ServiceCertificatePath, FromFileSystem = true },
-            WspEndpoint = ServiceEndpoint,
-            WspEndpointID = ServiceEndpointId,
-            ClientCertificate = new Certificate { FilePath = ClientCertificateFilePath, FromFileSystem = true },
-            Cvr = Cvr,
+            clientCert = new Certificate { FilePath = clientCertificateFilePath, FromFileSystem = true };
+        }
+        else
+        {
+            clientCert = new Certificate { FilePath = clientCertificateFilePath, Password = clientCertificatePassword, FromFileSystem = true };
+        }
+
+        return CreateConfiguration(new OioIdwsWcfConfigurationSection()
+        {
+            StsCertificate = new Certificate { FilePath = stsCertificateFilePath, FromFileSystem = true },
+            StsEndpointAddress = stsEndpointAddress,
+            StsEntityIdentifier = stsEntityIdentifier,
+            ServiceCertificate = new Certificate { FilePath = serviceCertificatePath, FromFileSystem = true },
+            WspEndpoint = serviceEndpoint,
+            WspEndpointID = serviceEndpointId,
+            ClientCertificate = clientCert,
+            Cvr = cvr,
             TokenLifeTimeInMinutes = 60,
-            IncludeLibertyHeader = IncludeLibertyHeader,
+            IncludeLibertyHeader = includeLibertyHeader,
             MaxReceivedMessageSize = 256000,
-            DebugMode = DebugMode,
-            WspSoapVersion = WspSoapVersion
+            DebugMode = debugMode,
+            WspSoapVersion = wspSoapVersion
         });
+    }
 }

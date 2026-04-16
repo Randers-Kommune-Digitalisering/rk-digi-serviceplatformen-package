@@ -1,5 +1,8 @@
 ## .gitignore for .NET and python projects
 
+certs/
+WsdlForINtegrations/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

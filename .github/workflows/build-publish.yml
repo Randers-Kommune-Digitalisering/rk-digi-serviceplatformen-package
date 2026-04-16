@@ -1,0 +1,58 @@
+name: build-publish
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-and-publish:
+    name: Publish to PyPI
+    runs-on: windows-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Build .NET library (Release)
+        run: >
+          dotnet build
+          dotnet\src\KombitServiceClient\KombitServiceClient.csproj
+          -c Release
+          --nologo
+
+      - name: Bundle DLLs into Python package
+        # Copies every file from the .NET Release output into
+        # python/src/kombit-client/dotnet/ so they are picked up
+        # as wheel artifacts and end up in the installed package.
+        shell: pwsh
+        run: |
+          $src = "dotnet\src\KombitServiceClient\bin\Release\net8.0"
+          $dst = "python\src\kombit-client\dotnet"
+          New-Item -ItemType Directory -Force -Path $dst | Out-Null
+          Copy-Item "$src\*" -Destination $dst -Recurse -Force
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+
+      - name: Install build + publish tools
+        run: pip install build twine
+
+      - name: Build wheel
+        working-directory: python
+        run: python -m build --wheel
+
+      - name: Publish to PyPI
+        working-directory: python
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: twine upload dist\*.whl
