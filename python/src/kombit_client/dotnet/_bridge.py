@@ -1,8 +1,11 @@
+import importlib
 import os
+
 from clr_loader import get_coreclr
 from pythonnet import set_runtime
 
 _DOTNET_DIR = os.path.abspath(os.path.dirname(__file__))
+_INTEGRATIONS_NS = "KombitServiceClient.Integrations"
 
 
 def _load_dotnet() -> None:
@@ -13,6 +16,10 @@ def _load_dotnet() -> None:
 
 
 _load_dotnet()
-from KombitServiceClient.Integrations.SF1520 import PersonBaseDataExtendedClient as _PersonBaseDataExtendedClient  # noqa: E402
 
-__all__ = ["_PersonBaseDataExtendedClient"]
+import System.Reflection as _Reflection  # noqa: E402
+
+_assembly = _Reflection.Assembly.Load("KombitServiceClient")
+for _t in _assembly.GetTypes():
+    if _t.Namespace and _t.Namespace.startswith(_INTEGRATIONS_NS) and _t.IsPublic and not _t.IsAbstract:
+        globals()[_t.Name] = getattr(importlib.import_module(_t.Namespace), _t.Name)

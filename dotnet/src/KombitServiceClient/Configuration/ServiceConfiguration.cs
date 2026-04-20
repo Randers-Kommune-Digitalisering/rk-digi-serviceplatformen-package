@@ -32,7 +32,7 @@ public class ServiceConfiguration
     /// <param name="stsCertificateFilePath">Path to the STS certificate (.cer).</param>
     /// <param name="stsEndpointAddress">STS endpoint address.</param>
     /// <param name="stsEntityIdentifier">STS entity identifier.</param>
-    /// <param name="serviceCertificatePath">Path to the service certificate (.cer).</param>
+    /// <param name="serviceCertificateFilePath">Path to the service certificate (.cer).</param>
     /// <param name="serviceEndpoint">Service endpoint address.</param>
     /// <param name="serviceEndpointId">Service endpoint ID.</param>
     /// <param name="cvr">CVR number.</param>
@@ -45,7 +45,7 @@ public class ServiceConfiguration
         string stsCertificateFilePath,
         string stsEndpointAddress,
         string stsEntityIdentifier,
-        string serviceCertificatePath,
+        string serviceCertificateFilePath,
         string serviceEndpoint,
         string serviceEndpointId,
         string cvr,
@@ -59,7 +59,7 @@ public class ServiceConfiguration
             stsCertificateFilePath,
             stsEndpointAddress,
             stsEntityIdentifier,
-            serviceCertificatePath,
+            serviceCertificateFilePath,
             serviceEndpoint,
             serviceEndpointId,
             cvr,
@@ -78,7 +78,7 @@ public class ServiceConfiguration
     /// <param name="stsCertificateFilePath">Path to the STS certificate (.cer).</param>
     /// <param name="stsEndpointAddress">STS endpoint address.</param>
     /// <param name="stsEntityIdentifier">STS entity identifier.</param>
-    /// <param name="serviceCertificatePath">Path to the service certificate (.cer).</param>
+    /// <param name="serviceCertificateFilePath">Path to the service certificate (.cer).</param>
     /// <param name="serviceEndpoint">Service endpoint address.</param>
     /// <param name="serviceEndpointId">Service endpoint ID.</param>
     /// <param name="cvr">CVR number.</param>
@@ -92,7 +92,7 @@ public class ServiceConfiguration
         string stsCertificateFilePath,
         string stsEndpointAddress,
         string stsEntityIdentifier,
-        string serviceCertificatePath,
+        string serviceCertificateFilePath,
         string serviceEndpoint,
         string serviceEndpointId,
         string cvr,
@@ -118,7 +118,7 @@ public class ServiceConfiguration
             StsCertificate = new Certificate { FilePath = stsCertificateFilePath, FromFileSystem = true },
             StsEndpointAddress = stsEndpointAddress,
             StsEntityIdentifier = stsEntityIdentifier,
-            ServiceCertificate = new Certificate { FilePath = serviceCertificatePath, FromFileSystem = true },
+            ServiceCertificate = new Certificate { FilePath = serviceCertificateFilePath, FromFileSystem = true },
             WspEndpoint = serviceEndpoint,
             WspEndpointID = serviceEndpointId,
             ClientCertificate = clientCert,
