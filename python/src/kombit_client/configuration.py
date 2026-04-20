@@ -3,6 +3,7 @@ import os
 # Certificates
 _CERT_BASE_PATH = os.environ['CERT_BASE_PATH']
 CLIENT_CERT_PATH = os.path.join(_CERT_BASE_PATH, os.environ['CLIENT_CERT'])
+CLIENT_CERT_BASE64 = os.environ.get('CLIENT_CERT_BASE64', None)
 CLIENT_CERT_PASS = os.environ.get('CLIENT_CERT_PASS', None)
 ROOT_CERT_PATH = os.path.join(_CERT_BASE_PATH, os.environ.get('ROOT_CERT', 'CA-Den Danske Stat OCES rod-CA.cer'))
 ACCESS_CONTROL_CERT_PATH = os.path.join(_CERT_BASE_PATH, os.environ.get('ACCESS_CONTROL_CERT', 'ADG_PROD_Adgangsstyring_2.cer'))

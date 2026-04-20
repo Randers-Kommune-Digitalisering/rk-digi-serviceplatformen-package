@@ -1,9 +1,9 @@
+import base64
 import shutil
 import ssl
 import subprocess
 import sys
 from pathlib import Path
-
 
 # Root CA details to check for
 _CN = "Den Danske Stat OCES rod-CA"
@@ -11,8 +11,14 @@ _O = "Den Danske Stat"
 _C = "DK"
 
 
+def write_cert_file_from_base64_string(base64_string: str, output_file_path: str) -> None:
+    with open(output_file_path, "wb") as f:
+        f.write(base64.b64decode(base64_string))
+
+
 def is_oces_root_ca_trusted() -> bool:
-    """Return True if 'Den Danske Stat OCES rod-CA' is in the OS trust store.
+    """
+    Return True if 'Den Danske Stat OCES rod-CA' is in the OS trust store.
 
     Uses platform-native tooling on Windows and macOS to ensure the live
     certificate store is queried rather than a stale snapshot.
@@ -20,26 +26,10 @@ def is_oces_root_ca_trusted() -> bool:
     """
     if sys.platform == "win32":
         return _check_windows_store()
-    else:
-        return _check_ssl_context()  # type: ignore[unreachable]
-
-
-def install_cert_to_trust_store(cert_path: str | Path) -> None:
-    """Install a certificate into the machine-wide OS trust store.
-
-    Requires elevated privileges (Administrator on Windows, root on Linux).
-
-    On Linux the certificate is converted to PEM if needed, then installed via
-    ``update-ca-certificates`` (Debian/Ubuntu) or ``update-ca-trust`` (RHEL/CentOS).
-
-    Raises RuntimeError if the installation fails.
-    """
-    if sys.platform == "win32":
-        _install_cert_windows(cert_path)
     elif sys.platform == "linux":
-        _install_cert_linux(cert_path)  # type: ignore[unreachable]
+        return _check_ssl_context()  # type: ignore[unreachable]
     else:
-        raise NotImplementedError(f"install_cert_to_trust_store is not supported on {sys.platform}")  # type: ignore[unreachable]
+        raise NotImplementedError(f"is_oces_root_ca_trusted is not supported on {sys.platform}")  # type: ignore[unreachable]
 
 
 def _check_windows_store() -> bool:
@@ -72,41 +62,3 @@ def _check_ssl_context() -> bool:
         ):
             return True
     return False
-
-
-def _install_cert_windows(cert_path: str | Path) -> None:
-    ps_script = f'Import-Certificate -FilePath "{cert_path}" -CertStoreLocation Cert:\\LocalMachine\\Root'
-    result = subprocess.run(
-        ["powershell", "-NoProfile", "-NonInteractive", "-Command", ps_script],
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        raise RuntimeError(f"Failed to install certificate on Windows: {result.stderr.strip()}")
-
-
-def _install_cert_linux(cert_path: str | Path) -> None:
-    cert_path = Path(cert_path)
-
-    # Ensure the cert is PEM-encoded (required by both tools).
-    raw = cert_path.read_bytes()
-    pem = raw if b"-----BEGIN" in raw else ssl.DER_cert_to_PEM_cert(raw).encode()
-
-    if shutil.which("update-ca-certificates"):
-        # Debian / Ubuntu — cert must have .crt extension.
-        dest = Path("/usr/local/share/ca-certificates") / cert_path.with_suffix(".crt").name
-        dest.write_bytes(pem)
-        result = subprocess.run(["update-ca-certificates"], capture_output=True, text=True)
-    elif shutil.which("update-ca-trust"):
-        # RHEL / CentOS / Fedora
-        dest = Path("/etc/pki/ca-trust/source/anchors") / cert_path.name
-        dest.write_bytes(pem)
-        result = subprocess.run(["update-ca-trust", "extract"], capture_output=True, text=True)
-    else:
-        raise RuntimeError(
-            "No supported trust store tool found. "
-            "Install 'ca-certificates' (Debian) or 'ca-certificates' (RHEL)."
-        )
-
-    if result.returncode != 0:
-        raise RuntimeError(f"Failed to update CA trust store: {result.stderr.strip()}")

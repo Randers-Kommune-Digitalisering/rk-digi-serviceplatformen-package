@@ -22,6 +22,7 @@ All configuration is handled via environment variables. You must set the followi
 |-----------------------------|-------------------------------------------------------------------------------|
 | `CERT_BASE_PATH`            | Directory containing all certificate files                                    |
 | `CLIENT_CERT`               | Filename of client certificate (e.g., `client.p12`)                           |
+| `CLIENT_CERT_BASE64`        | (Optional) client certificate as a base64 string                              |
 | `CLIENT_PASS`               | (Optional) Password for client certificate                                    |
 | `ROOT_CERT`                 | (Optional) Filename of the root certificate (needs to be added to trust store)|
 | `ACCESS_CONTROL_CERT`       | (Optional) Filename of the STS/Access Control certificate                     |
