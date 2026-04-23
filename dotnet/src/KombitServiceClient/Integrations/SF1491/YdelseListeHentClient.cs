@@ -1,6 +1,6 @@
 using System.IdentityModel.Tokens;
 using System.Text.Json;
-using ConnectedServices_SF1491_YdelseListeHentService;
+using ConnectedServices.YdelseListeHentService;
 using Digst.OioIdws.OioWsTrustCore;
 using System.Globalization;
 using static Digst.OioIdws.SoapCore.FederatedChannelFactoryExtensions;

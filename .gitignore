@@ -4,6 +4,7 @@ certs/
 WsdlForINtegrations/
 python/src/kombit_client/dotnet/*
 !python/src/kombit_client/dotnet/*.py
+**/dotnet-svcutil.params.json
 
 # Build results
 [Dd]ebug/
