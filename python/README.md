@@ -47,7 +47,7 @@ This service allows public authorities' user systems to retrieve personal inform
 
 
 ```python
-from kombit_client.integrations.sf1520 import PersonBaseDataExtendedClient
+from kombit_client.integrations.sf1520.person_base_data_extended import PersonBaseDataExtendedClient
 
 client = PersonBaseDataExtendedClient(
     cvr="<organisation's CVR>"
@@ -75,7 +75,7 @@ The current implementaion only allows retrieving income information for private 
 
 **Code example**
 ```python
-from kombit_client.integrations.sf0770a import SKATForwardEIndkomstClient
+from kombit_client.integrations.sf0770a.skat_forward_eindkomst import SKATForwardEIndkomstClient
 
 client = SKATForwardEIndkomstClient(
     cvr="<organisation's CVR number>",
@@ -94,6 +94,30 @@ result = client.indkomstoplysninger_laes(
 ```
 
 The `soege_aar_maaned_fra_kode` and `soege_aar_maaned_til_kode` parameters are year-month strings in `YYYYMM` format defining the search period.
+
+---
+
+### SF1491 – Hent ydelser fra egen sektor
+Lookup granted benefits and payments for a person within your own sector via [SF1491](https://digitaliseringskataloget.dk/integration/sf1491).
+
+#### Services
+
+##### YdelseListeHent
+This service allows public authorities' systems to retrieve information about granted and disbursed financial benefits (effektueringer) for a given person.
+
+```python
+from kombit_client.integrations.sf1491.ydelse_liste_hent import YdelseListeHentClient
+
+client = YdelseListeHentClient(
+    cvr="<organisation's CVR>"
+)
+
+result = client.effektuering_hent(
+    cpr="<a civil registration number>",
+    start_dato="2026-01-01",  # optional
+    slut_dato="2026-12-31"    # optional
+)
+```
 
 ---
 
