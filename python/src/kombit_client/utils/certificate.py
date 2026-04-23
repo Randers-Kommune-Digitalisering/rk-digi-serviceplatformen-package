@@ -1,9 +1,7 @@
 import base64
-import shutil
 import ssl
 import subprocess
 import sys
-from pathlib import Path
 
 # Root CA details to check for
 _CN = "Den Danske Stat OCES rod-CA"
@@ -56,9 +54,7 @@ def _check_ssl_context() -> bool:
     for cert in context.get_ca_certs(binary_form=False):
         subject = {k: v for rdn in cert["subject"] for k, v in rdn}
         if (
-            subject.get("commonName") == _CN
-            and subject.get("organizationName") == _O
-            and subject.get("countryName") == _C
+            subject.get("commonName") == _CN and subject.get("organizationName") == _O and subject.get("countryName") == _C
         ):
             return True
     return False

@@ -1,10 +1,11 @@
 import json
 
 from kombit_client.configuration import (
+    CVR_NUMBER,
     ACCESS_CONTROL_CERT_PATH,
     CLIENT_CERT_PATH,
     CLIENT_CERT_PASS,
-    SIGNING_CERT_PATH,
+    YDELSESINDEKS_CERT_PATH,
     STS_ENDPOINT_ADDRESS,
     STS_ENDPOINT_ID,
 )
@@ -16,17 +17,19 @@ class YdelseListeHentClient(_YdelseListHentClient):
 
     def __init__(
         self,
-        cvr: str,
+        cvr: str = CVR_NUMBER,
         sts_certificate_file_path: str = ACCESS_CONTROL_CERT_PATH,
         sts_endpoint_address: str = STS_ENDPOINT_ADDRESS,
         sts_entity_identifier: str = STS_ENDPOINT_ID,
-        service_certificate_file_path: str = SIGNING_CERT_PATH,
+        service_certificate_file_path: str = YDELSESINDEKS_CERT_PATH,
         service_endpoint: str = "https://ydelsesindeks.stoettesystemerne.dk/ydelselistehent/2",
         service_endpoint_id: str = "http://entityid.kombit.dk/service/ydelselistehent/1",
         client_certificate_file_path: str = CLIENT_CERT_PATH,
         client_certificate_password: str | None = CLIENT_CERT_PASS,
         debug_mode: bool = False,
     ) -> None:
+        if not all([cvr, sts_certificate_file_path, sts_endpoint_address, sts_entity_identifier, service_certificate_file_path, service_endpoint, service_endpoint_id, client_certificate_file_path]):
+            raise ValueError("Missing required configuration for YdelseListeHentClient.")
         super().__init__(
             stsCertificateFilePath=sts_certificate_file_path,
             stsEndpointAddress=sts_endpoint_address,

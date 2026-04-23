@@ -27,7 +27,7 @@ Bug-Tracker = "https://github.com/Randers-Kommune-Digitalisering/rk-digi-service
 
 [project]
 name = "kombit-client"
-version = "1.1.0"
+version = "1.1.1"
 description = "KOMBIT client provides easy connection to webservices from KOMBIT / Serviceplatformen / digitaliseringskataloget."
 authors = [
   { name = "Rune Keena", email="runekeena@gmail.com"},

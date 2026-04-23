@@ -1,5 +1,6 @@
 import json
 from kombit_client.configuration import (
+    CVR_NUMBER,
     ACCESS_CONTROL_CERT_PATH,
     CLIENT_CERT_PATH,
     CLIENT_CERT_PASS,
@@ -14,7 +15,7 @@ class PersonBaseDataExtendedClient(_PersonBaseDataExtendedClient):
     """A Python wrapper around the PersonBaseDataExtendedClient from the KombitServiceClient .NET library."""
     def __init__(
         self,
-        cvr: str,
+        cvr: str = CVR_NUMBER,
         sts_certificate_file_path: str = ACCESS_CONTROL_CERT_PATH,
         sts_endpoint_address: str = STS_ENDPOINT_ADDRESS,
         sts_entity_identifier: str = STS_ENDPOINT_ID,
@@ -25,6 +26,8 @@ class PersonBaseDataExtendedClient(_PersonBaseDataExtendedClient):
         client_certificate_password: str | None = CLIENT_CERT_PASS,
         debug_mode: bool = False,
     ) -> None:
+        if not all([cvr, sts_certificate_file_path, sts_endpoint_address, sts_entity_identifier, service_certificate_file_path, service_endpoint, service_endpoint_id, client_certificate_file_path]):
+            raise ValueError("Missing required configuration for PersonBaseDataExtendedClient.")
         super().__init__(
             stsCertificateFilePath=sts_certificate_file_path,
             stsEndpointAddress=sts_endpoint_address,
