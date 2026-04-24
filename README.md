@@ -19,7 +19,7 @@ All connected services are generated from wsdl files downloaded from [digitalise
   "version": "8.0.0",
   "options": {
     "inputs": [
-      "<path to wdsl file>"
+      "<path to wsdl file>"
     ],
     "namespaceMappings": [
       "*, ConnectedServices.<service name>"
