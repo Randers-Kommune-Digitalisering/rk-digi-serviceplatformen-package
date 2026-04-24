@@ -1,4 +1,5 @@
- # kombit-client
+[![PyPI version](https://img.shields.io/pypi/v/kombit-client.svg)](https://pypi.org/project/kombit-client/)
+# kombit-client
 
 A Python client for connecting to Danish government web services via [KOMBIT Serviceplatformen](https://digitaliseringskataloget.dk/). The package wraps a .NET library using [pythonnet](https://pythonnet.github.io/), exposing a clean Python API with Pythonic naming conventions.
 
