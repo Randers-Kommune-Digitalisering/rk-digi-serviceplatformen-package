@@ -34,7 +34,8 @@ All configuration can be handled via environment variables. You can set the foll
 | `STS_ENDPOINT_ADDRESS`      | (Optional) URL of the STS endpoint                                            |
 | `STS_ENDPOINT_ID`           | (Optional) Entity identifier for the STS                                      |
 
-Defaults certificate names are defined in the code for public shared certificates from serviceplatformen. All certificate paths are constructed as `os.path.join(CERT_BASE_PATH, <filename>)`.
+Defaults certificate names are defined in the code for public shared certificates and are based on current (2026-04-24) certificate names from serviceplatformen's production environment.
+All certificate paths are constructed as `os.path.join(CERT_BASE_PATH, <filename>)`.
 
 All configurations can also be set when initiating the service clients. Some service clients might require additional configuration passed at initialization. 
 
