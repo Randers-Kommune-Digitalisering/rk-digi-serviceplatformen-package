@@ -4,8 +4,8 @@
 [kombit-client python package](python/README.md)
 
 
-## WDSL
-All connected services are generated from wdsl files downloaded from [digitaliseringskataloget](https://digitaliseringskataloget.dk/). When downloading documentation for an integration from digitaliseringskataloget the wdsl files are located in the "teknisk spec" zip file.
+## WSDL
+All connected services are generated from wsdl files downloaded from [digitaliseringskataloget](https://digitaliseringskataloget.dk/). When downloading documentation for an integration from digitaliseringskataloget the wdsl files are located in the "teknisk spec" zip file.
 
 
 * [SF0770A](https://digitaliseringskataloget.dk/integration/sf0770a) - downloaded at 2026-04-23
