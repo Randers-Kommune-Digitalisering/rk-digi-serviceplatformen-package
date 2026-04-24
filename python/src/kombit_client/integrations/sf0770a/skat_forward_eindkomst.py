@@ -5,7 +5,7 @@ from kombit_client.configuration import (
     ACCESS_CONTROL_CERT_PATH,
     CLIENT_CERT_PATH,
     CLIENT_CERT_PASS,
-    SIGNING_CERT_PATH,
+    SP_SIGNING_CERT_PATH,
     STS_ENDPOINT_ADDRESS,
     STS_ENDPOINT_ID
 )
@@ -24,7 +24,7 @@ class SKATForwardEIndkomstClient(_SKATForwardEIndkomstClient):
         sts_certificate_file_path: str = ACCESS_CONTROL_CERT_PATH,
         sts_endpoint_address: str = STS_ENDPOINT_ADDRESS,
         sts_entity_identifier: str = STS_ENDPOINT_ID,
-        service_certificate_file_path: str = SIGNING_CERT_PATH,
+        service_certificate_file_path: str = SP_SIGNING_CERT_PATH,
         service_endpoint: str = "https://prod.serviceplatformen.dk/service/SKAT/EIndkomst/4",
         service_endpoint_id: str = "http://entityid.kombit.dk/service/sp/skatforwardeindkomstservice/4",
         client_certificate_file_path: str = CLIENT_CERT_PATH,

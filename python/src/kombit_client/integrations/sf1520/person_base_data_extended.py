@@ -4,7 +4,7 @@ from kombit_client.configuration import (
     ACCESS_CONTROL_CERT_PATH,
     CLIENT_CERT_PATH,
     CLIENT_CERT_PASS,
-    SIGNING_CERT_PATH,
+    SP_SIGNING_CERT_PATH,
     STS_ENDPOINT_ADDRESS,
     STS_ENDPOINT_ID
 )
@@ -19,7 +19,7 @@ class PersonBaseDataExtendedClient(_PersonBaseDataExtendedClient):
         sts_certificate_file_path: str = ACCESS_CONTROL_CERT_PATH,
         sts_endpoint_address: str = STS_ENDPOINT_ADDRESS,
         sts_entity_identifier: str = STS_ENDPOINT_ID,
-        service_certificate_file_path: str = SIGNING_CERT_PATH,
+        service_certificate_file_path: str = SP_SIGNING_CERT_PATH,
         service_endpoint: str = "https://prod.serviceplatformen.dk/service/CPR/PersonBaseDataExtended/5",
         service_endpoint_id: str = "http://cpr.serviceplatformen.dk/service/personbasedataextended/5",
         client_certificate_file_path: str = CLIENT_CERT_PATH,

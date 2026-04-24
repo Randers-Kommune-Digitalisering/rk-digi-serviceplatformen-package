@@ -26,10 +26,11 @@ All configuration can be handled via environment variables. You can set the foll
 | `CERT_BASE_PATH`            | (Optional) Directory containing all certificate files                         |
 | `CLIENT_CERT`               | (Optional) Filename of client certificate (e.g., `client.p12`)                |
 | `CLIENT_CERT_BASE64`        | (Optional) Client certificate as a base64 string                              |
-| `CLIENT_PASS`               | (Optional) Password for client certificate                                    |
+| `CLIENT_CERT_PASS`          | (Optional) Password for client certificate                                    |
 | `ROOT_CERT`                 | (Optional) Filename of the root certificate (needs to be added to trust store)|
 | `ACCESS_CONTROL_CERT`       | (Optional) Filename of the STS/Access Control certificate                     |
-| `SIGNING_CERT`              | (Optional) Filename of the Service Provider signing certificate               |
+| `SP_SIGNING_CERT`           | (Optional) Filename of the "serviceplatformen" signing certificate            |
+| `YDELSESINDEKS_CERT`        | (Optional) Filename of the "ydelsesindeks" signing certificate                |
 | `STS_ENDPOINT_ADDRESS`      | (Optional) URL of the STS endpoint                                            |
 | `STS_ENDPOINT_ID`           | (Optional) Entity identifier for the STS                                      |
 
