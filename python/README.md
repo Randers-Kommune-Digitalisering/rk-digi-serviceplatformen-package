@@ -1,4 +1,4 @@
-# kombit-client
+ # kombit-client
 
 A Python client for connecting to Danish government web services via [KOMBIT Serviceplatformen](https://digitaliseringskataloget.dk/). The package wraps a .NET library using [pythonnet](https://pythonnet.github.io/), exposing a clean Python API with Pythonic naming conventions.
 
@@ -6,7 +6,9 @@ A Python client for connecting to Danish government web services via [KOMBIT Ser
 
 - Python 3.10–3.14
 - .NET 9 runtime or SDK ([download](https://dotnet.microsoft.com/download))
-- Certificates issued by KOMBIT for STS and service authentication: [digitaliseringskataloget - certifikater](https://digitaliseringskataloget.dk/teknik/certifikater)
+- Certificates issued by KOMBIT for STS and service authentication: [digitaliseringskataloget - certifikater](https://digitaliseringskataloget.dk/teknik/certifikater)*
+
+***Note**: The “Den Danske Stat” root certificate must be installed in a trusted root certificate store (either the system or user trust store).
 
 ## Installation
 
@@ -16,21 +18,26 @@ pip install kombit-client
 
 ## Overview
 
-All configuration is handled via environment variables. You must set the following variables before using the client:
+All configuration can be handled via environment variables. You can set the following variables before using the service clients:
 
 | Environment Variable        | Description                                                                   |
 |-----------------------------|-------------------------------------------------------------------------------|
-| `CERT_BASE_PATH`            | Directory containing all certificate files                                    |
-| `CLIENT_CERT`               | Filename of client certificate (e.g., `client.p12`)                           |
-| `CLIENT_CERT_BASE64`        | (Optional) client certificate as a base64 string                              |
-| `CLIENT_PASS`               | (Optional) Password for client certificate                                    |
+| `CVR_NUMBER`                | (Optional) Organisation's CVR number                                          |
+| `CERT_BASE_PATH`            | (Optional) Directory containing all certificate files                         |
+| `CLIENT_CERT`               | (Optional) Filename of client certificate (e.g., `client.p12`)                |
+| `CLIENT_CERT_BASE64`        | (Optional) Client certificate as a base64 string                              |
+| `CLIENT_CERT_PASS`          | (Optional) Password for client certificate                                    |
 | `ROOT_CERT`                 | (Optional) Filename of the root certificate (needs to be added to trust store)|
 | `ACCESS_CONTROL_CERT`       | (Optional) Filename of the STS/Access Control certificate                     |
-| `SIGNING_CERT`              | (Optional) Filename of the Service Provider signing certificate               |
+| `SP_SIGNING_CERT`           | (Optional) Filename of the "serviceplatformen" signing certificate            |
+| `YDELSESINDEKS_CERT`        | (Optional) Filename of the "ydelsesindeks" signing certificate                |
 | `STS_ENDPOINT_ADDRESS`      | (Optional) URL of the STS endpoint                                            |
 | `STS_ENDPOINT_ID`           | (Optional) Entity identifier for the STS                                      |
 
-If optional variables are not set, defaults will be used as defined in the code. All certificate paths are constructed as `os.path.join(CERT_BASE_PATH, <filename>)`.
+Defaults certificate names are defined in the code for public shared certificates and are based on current (2026-04-24) certificate names from serviceplatformen's production environment.
+All certificate paths are constructed as `os.path.join(CERT_BASE_PATH, <filename>)`.
+
+All configurations can also be set when initiating the service clients. Some service clients might require additional configuration passed at initialization. 
 
 ---
 
@@ -47,11 +54,9 @@ This service allows public authorities' user systems to retrieve personal inform
 
 
 ```python
-from kombit_client.integrations.sf1520.person_base_data_extended import PersonBaseDataExtendedClient
+from kombit_client.integrations.sf1520 import PersonBaseDataExtendedClient
 
-client = PersonBaseDataExtendedClient(
-    cvr="<organisation's CVR>"
-)
+client = PersonBaseDataExtendedClient()
 
 result = client.person_lookup(pnr="<a civil registration number>")
 # Returns a dict with person base data
@@ -68,17 +73,16 @@ Retrieve income data from SKAT via [SF0770_A](https://digitaliseringskataloget.d
 ##### SKATForwardEIndkomstService
 Synchronous web service that allows you to retrieve income information.
 
-The current implementaion only allows retrieving income information for private individuals.
+The current implementation only allows retrieving income information for private individuals.
 
 **Useful docs:**
 * [eIndkomst Udstilling](https://info.skat.dk/data.aspx?oid=2248828&chk=220344) ("underbilag 1 (excel)" describes the different fields)
 
 **Code example**
 ```python
-from kombit_client.integrations.sf0770a.skat_forward_eindkomst import SKATForwardEIndkomstClient
+from kombit_client.integrations.sf0770a import SKATForwardEIndkomstClient
 
 client = SKATForwardEIndkomstClient(
-    cvr="<organisation's CVR number>",
     virksomhed_se_nummer_identifikator="<organisation's SE number>",
     abonnement_type_kode="<subscription type code>",
     abonnent_type_kode="<subscriber type code>",
@@ -106,7 +110,7 @@ Lookup granted benefits and payments for a person within your own sector via [SF
 This service allows public authorities' systems to retrieve information about granted and disbursed financial benefits (effektueringer) for a given person.
 
 ```python
-from kombit_client.integrations.sf1491.ydelse_liste_hent import YdelseListeHentClient
+from kombit_client.integrations.sf1491 import YdelseListeHentClient
 
 client = YdelseListeHentClient(
     cvr="<organisation's CVR>"

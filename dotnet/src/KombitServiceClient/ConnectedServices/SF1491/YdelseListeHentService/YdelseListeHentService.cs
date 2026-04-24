@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConnectedServices_SF1491_YdelseListeHentService
+namespace ConnectedServices.YdelseListeHentService
 {
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/", ConfigurationName="ConnectedServices_SF1491_YdelseListeHentService.YdelseListeHentServicePortType")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/", ConfigurationName="ConnectedServices.YdelseListeHentService.YdelseListeHentServicePortType")]
     public interface YdelseListeHentServicePortType
     {
         
@@ -22,7 +22,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(EffektueringHent_IType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BevillingHent_OType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BevillingHent_IType))]
-        System.Threading.Tasks.Task<ConnectedServices_SF1491_YdelseListeHentService.BevillingHentRequest1> BevillingHentAsync(ConnectedServices_SF1491_YdelseListeHentService.BevillingHentRequest request);
+        System.Threading.Tasks.Task<ConnectedServices.YdelseListeHentService.BevillingHentRequest1> BevillingHentAsync(ConnectedServices.YdelseListeHentService.BevillingHentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.kombit.dk/int/2022/01/01/YdelseListeHentService#EffektueringHent", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -30,11 +30,11 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(EffektueringHent_IType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BevillingHent_OType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BevillingHent_IType))]
-        System.Threading.Tasks.Task<ConnectedServices_SF1491_YdelseListeHentService.EffektueringHentRequest1> EffektueringHentAsync(ConnectedServices_SF1491_YdelseListeHentService.EffektueringHentRequest request);
+        System.Threading.Tasks.Task<ConnectedServices.YdelseListeHentService.EffektueringHentRequest1> EffektueringHentAsync(ConnectedServices.YdelseListeHentService.EffektueringHentRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_I : BevillingHent_IType
@@ -58,7 +58,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_IType
@@ -531,7 +531,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://kombit.dk/xml/schemas/kontekst/2017/01/01/")]
     public partial class HovedOplysningerType
@@ -667,7 +667,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://kombit.dk/xml/schemas/kontekst/2017/01/01/")]
     public partial class AuthorityContextType
@@ -690,7 +690,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_OType
@@ -731,7 +731,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://kombit.dk/xml/schemas/kontekst/2017/01/01/")]
     public partial class HovedOplysningerSvarType
@@ -787,7 +787,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://kombit.dk/xml/schemas/kontekst/2017/01/01/")]
     public partial class SvarReaktionType
@@ -812,7 +812,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://kombit.dk/xml/schemas/kontekst/2017/01/01/")]
     public partial class AdvisType
@@ -884,7 +884,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://kombit.dk/xml/schemas/kontekst/2017/01/01/")]
     public partial class FejlType
@@ -956,7 +956,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_OTypeOEkonomiskEffektuering
@@ -997,7 +997,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class OekonomiskEffektueringStrukturType
@@ -1261,7 +1261,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class OekonomiskEffektueringStrukturTypeOEkonomiskEffektueringMasterSystemInstans
@@ -1301,7 +1301,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class OekonomiskEffektueringStrukturTypeOEkonomiskEffektueringModtager
@@ -1405,7 +1405,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public enum PartTypeType
     {
@@ -1421,7 +1421,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_OTypeOEkonomiskEffektueringOEkonomiskYdelseseffektuering
@@ -1509,7 +1509,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_OTypeOEkonomiskEffektueringOEkonomiskYdelseseffektueringBevilgetYdelse
@@ -1837,7 +1837,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_OTypeOEkonomiskEffektueringOEkonomiskYdelseseffektueringBevilgetYdelseYdelseKlasse
@@ -1877,7 +1877,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_OTypeOEkonomiskEffektueringOEkonomiskYdelseseffektueringBevilgetYdelseBevilgetYdelseEffektueringModtager
@@ -1981,7 +1981,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public enum ForudBagudType
     {
@@ -1994,7 +1994,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingStrukturType
@@ -2114,7 +2114,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public enum FoelsomhedType
     {
@@ -2137,7 +2137,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingStrukturTypeBevillingEjer
@@ -2161,7 +2161,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingStrukturTypeBevillingMasterSystemInstans
@@ -2201,7 +2201,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingStrukturTypeBevillingAnsvarligAfdeling
@@ -2273,7 +2273,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingStrukturTypeBevillingsmodtager
@@ -2377,7 +2377,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingStrukturTypeBevillingssag
@@ -2561,7 +2561,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingStrukturTypeBevillingssagSagMasterSystemInstans
@@ -2601,7 +2601,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_IType
@@ -2850,7 +2850,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_ITypeKriterie
@@ -2896,7 +2896,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_ITypeKriterieBevilgetYdelseKriterie
@@ -2936,7 +2936,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/", IncludeInSchema=false)]
     public enum ItemChoiceType1
     {
@@ -2958,7 +2958,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public enum PartRolleTypeType
     {
@@ -2971,7 +2971,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_ITypeBevillingDataAfgrGruppe
@@ -3013,7 +3013,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_ITypeBevillingDataAfgrGruppeBevillingDataAfgr
@@ -3085,7 +3085,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_ITypeResultatFilter
@@ -3125,7 +3125,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_ITypeEffektueringSortering
@@ -3181,7 +3181,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public enum EffektueringSorteringElementType
     {
@@ -3200,7 +3200,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public enum SorteringRetningType
     {
@@ -3213,7 +3213,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_OType
@@ -3254,7 +3254,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_OTypeBevilgetYdelse
@@ -3599,7 +3599,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_OTypeBevilgetYdelseYdelseKlasse
@@ -3639,7 +3639,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_OTypeBevilgetYdelseBevilgetYdelseEffektueringModtager
@@ -3743,7 +3743,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_OTypeBevilgetYdelseOEkonomiskYdelseseffektuering
@@ -3831,7 +3831,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://kombit.dk/xml/schemas/kontekst/2017/01/01/")]
     public partial class RuteType
@@ -3899,7 +3899,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_ITypeKriterie
@@ -3945,7 +3945,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/", IncludeInSchema=false)]
     public enum ItemChoiceType
     {
@@ -3967,7 +3967,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_ITypeYdelseKlasse
@@ -4007,7 +4007,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_ITypeBevillingDataAfgrGruppe
@@ -4049,7 +4049,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_ITypeBevillingDataAfgrGruppeBevillingDataAfgr
@@ -4121,7 +4121,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_ITypeResultatFilter
@@ -4161,7 +4161,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_ITypeYdelseSortering
@@ -4217,7 +4217,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public enum BevilgetYdelseSorteringElementType
     {
@@ -4242,7 +4242,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class BevillingHent_O : BevillingHent_OType
@@ -4266,47 +4266,47 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BevillingHentRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/", Order=0)]
-        public ConnectedServices_SF1491_YdelseListeHentService.BevillingHent_I BevillingHent_I;
+        public ConnectedServices.YdelseListeHentService.BevillingHent_I BevillingHent_I;
         
         public BevillingHentRequest()
         {
         }
         
-        public BevillingHentRequest(ConnectedServices_SF1491_YdelseListeHentService.BevillingHent_I BevillingHent_I)
+        public BevillingHentRequest(ConnectedServices.YdelseListeHentService.BevillingHent_I BevillingHent_I)
         {
             this.BevillingHent_I = BevillingHent_I;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BevillingHentRequest1
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/", Order=0)]
-        public ConnectedServices_SF1491_YdelseListeHentService.BevillingHent_O BevillingHent_O;
+        public ConnectedServices.YdelseListeHentService.BevillingHent_O BevillingHent_O;
         
         public BevillingHentRequest1()
         {
         }
         
-        public BevillingHentRequest1(ConnectedServices_SF1491_YdelseListeHentService.BevillingHent_O BevillingHent_O)
+        public BevillingHentRequest1(ConnectedServices.YdelseListeHentService.BevillingHent_O BevillingHent_O)
         {
             this.BevillingHent_O = BevillingHent_O;
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_I : EffektueringHent_IType
@@ -4330,7 +4330,7 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.kombit.dk/int/2022/01/01/")]
     public partial class EffektueringHent_O : EffektueringHent_OType
@@ -4354,53 +4354,53 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EffektueringHentRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/", Order=0)]
-        public ConnectedServices_SF1491_YdelseListeHentService.EffektueringHent_I EffektueringHent_I;
+        public ConnectedServices.YdelseListeHentService.EffektueringHent_I EffektueringHent_I;
         
         public EffektueringHentRequest()
         {
         }
         
-        public EffektueringHentRequest(ConnectedServices_SF1491_YdelseListeHentService.EffektueringHent_I EffektueringHent_I)
+        public EffektueringHentRequest(ConnectedServices.YdelseListeHentService.EffektueringHent_I EffektueringHent_I)
         {
             this.EffektueringHent_I = EffektueringHent_I;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EffektueringHentRequest1
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.kombit.dk/int/2022/01/01/", Order=0)]
-        public ConnectedServices_SF1491_YdelseListeHentService.EffektueringHent_O EffektueringHent_O;
+        public ConnectedServices.YdelseListeHentService.EffektueringHent_O EffektueringHent_O;
         
         public EffektueringHentRequest1()
         {
         }
         
-        public EffektueringHentRequest1(ConnectedServices_SF1491_YdelseListeHentService.EffektueringHent_O EffektueringHent_O)
+        public EffektueringHentRequest1(ConnectedServices.YdelseListeHentService.EffektueringHent_O EffektueringHent_O)
         {
             this.EffektueringHent_O = EffektueringHent_O;
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
-    public interface YdelseListeHentServicePortTypeChannel : ConnectedServices_SF1491_YdelseListeHentService.YdelseListeHentServicePortType, System.ServiceModel.IClientChannel
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    public interface YdelseListeHentServicePortTypeChannel : ConnectedServices.YdelseListeHentService.YdelseListeHentServicePortType, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0-preview1.24619.5")]
-    public partial class YdelseListeHentServicePortTypeClient : System.ServiceModel.ClientBase<ConnectedServices_SF1491_YdelseListeHentService.YdelseListeHentServicePortType>, ConnectedServices_SF1491_YdelseListeHentService.YdelseListeHentServicePortType
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    public partial class YdelseListeHentServicePortTypeClient : System.ServiceModel.ClientBase<ConnectedServices.YdelseListeHentService.YdelseListeHentServicePortType>, ConnectedServices.YdelseListeHentService.YdelseListeHentServicePortType
     {
         
         public YdelseListeHentServicePortTypeClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
@@ -4409,29 +4409,29 @@ namespace ConnectedServices_SF1491_YdelseListeHentService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ConnectedServices_SF1491_YdelseListeHentService.BevillingHentRequest1> ConnectedServices_SF1491_YdelseListeHentService.YdelseListeHentServicePortType.BevillingHentAsync(ConnectedServices_SF1491_YdelseListeHentService.BevillingHentRequest request)
+        System.Threading.Tasks.Task<ConnectedServices.YdelseListeHentService.BevillingHentRequest1> ConnectedServices.YdelseListeHentService.YdelseListeHentServicePortType.BevillingHentAsync(ConnectedServices.YdelseListeHentService.BevillingHentRequest request)
         {
             return base.Channel.BevillingHentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ConnectedServices_SF1491_YdelseListeHentService.BevillingHentRequest1> BevillingHentAsync(ConnectedServices_SF1491_YdelseListeHentService.BevillingHent_I BevillingHent_I)
+        public System.Threading.Tasks.Task<ConnectedServices.YdelseListeHentService.BevillingHentRequest1> BevillingHentAsync(ConnectedServices.YdelseListeHentService.BevillingHent_I BevillingHent_I)
         {
-            ConnectedServices_SF1491_YdelseListeHentService.BevillingHentRequest inValue = new ConnectedServices_SF1491_YdelseListeHentService.BevillingHentRequest();
+            ConnectedServices.YdelseListeHentService.BevillingHentRequest inValue = new ConnectedServices.YdelseListeHentService.BevillingHentRequest();
             inValue.BevillingHent_I = BevillingHent_I;
-            return ((ConnectedServices_SF1491_YdelseListeHentService.YdelseListeHentServicePortType)(this)).BevillingHentAsync(inValue);
+            return ((ConnectedServices.YdelseListeHentService.YdelseListeHentServicePortType)(this)).BevillingHentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ConnectedServices_SF1491_YdelseListeHentService.EffektueringHentRequest1> ConnectedServices_SF1491_YdelseListeHentService.YdelseListeHentServicePortType.EffektueringHentAsync(ConnectedServices_SF1491_YdelseListeHentService.EffektueringHentRequest request)
+        System.Threading.Tasks.Task<ConnectedServices.YdelseListeHentService.EffektueringHentRequest1> ConnectedServices.YdelseListeHentService.YdelseListeHentServicePortType.EffektueringHentAsync(ConnectedServices.YdelseListeHentService.EffektueringHentRequest request)
         {
             return base.Channel.EffektueringHentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ConnectedServices_SF1491_YdelseListeHentService.EffektueringHentRequest1> EffektueringHentAsync(ConnectedServices_SF1491_YdelseListeHentService.EffektueringHent_I EffektueringHent_I)
+        public System.Threading.Tasks.Task<ConnectedServices.YdelseListeHentService.EffektueringHentRequest1> EffektueringHentAsync(ConnectedServices.YdelseListeHentService.EffektueringHent_I EffektueringHent_I)
         {
-            ConnectedServices_SF1491_YdelseListeHentService.EffektueringHentRequest inValue = new ConnectedServices_SF1491_YdelseListeHentService.EffektueringHentRequest();
+            ConnectedServices.YdelseListeHentService.EffektueringHentRequest inValue = new ConnectedServices.YdelseListeHentService.EffektueringHentRequest();
             inValue.EffektueringHent_I = EffektueringHent_I;
-            return ((ConnectedServices_SF1491_YdelseListeHentService.YdelseListeHentServicePortType)(this)).EffektueringHentAsync(inValue);
+            return ((ConnectedServices.YdelseListeHentService.YdelseListeHentServicePortType)(this)).EffektueringHentAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
