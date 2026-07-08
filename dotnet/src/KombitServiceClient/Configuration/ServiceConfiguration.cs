@@ -125,7 +125,7 @@ public class ServiceConfiguration
             Cvr = cvr,
             TokenLifeTimeInMinutes = 60,
             IncludeLibertyHeader = includeLibertyHeader,
-            MaxReceivedMessageSize = 456000,
+            MaxReceivedMessageSize = 5996000,
             DebugMode = debugMode,
             WspSoapVersion = wspSoapVersion
         });
